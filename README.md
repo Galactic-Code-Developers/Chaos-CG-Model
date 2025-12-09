@@ -71,11 +71,11 @@ This script will:
    described in the manuscript, with parameters `(eta, alpha, beta)`.
 2. Evolve two nearby initial coherence configurations for `N` steps.
 3. Compute the distance trajectory
-   \(D_n = \\|\Psi_n - \Psi_n'\\|\).
-4. Estimate \(\lambda_{\mathrm{CG}}\) via a linear fit of
+   $\(D_n = \\|\Psi_n - \Psi_n'\\|\)$.
+4. Estimate $\lambda_{\mathrm{CG}}\)$ via a linear fit of
    `log D_n` vs `n` on a chosen time window.
 5. Compare the estimated exponent to the model expectation
-   \(\log(1+\eta)\).
+   $\(\log(1+\eta)\)$.
 
 The script prints the key quantities to the console and, if `matplotlib` is
 available, produces simple diagnostic plots.
@@ -86,8 +86,8 @@ available, produces simple diagnostic plots.
 
 The numerical model implemented here encodes the following ideas:
 
-- Dynamics on a finite-dimensional coherence vector \(\Psi_t\).
-- An effective linear propagator \(\mathcal{T}_{\infty}\) arising from
+- Dynamics on a finite-dimensional coherence vector $\(\Psi_t\)$.
+- An effective linear propagator $\(\mathcal{T}_{\infty}\)$ arising from
   linearization of the discrete update rule around a reference configuration.
 - A **coherence-gradient Lyapunov exponent** \(\lambda_{\mathrm{CG}}\)
   extracted from exponential growth of distances between nearby initial

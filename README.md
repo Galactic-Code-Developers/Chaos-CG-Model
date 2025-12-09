@@ -72,7 +72,7 @@ This script will:
 2. Evolve two nearby initial coherence configurations for `N` steps.
 3. Compute the distance trajectory
    $\(D_n = \\|\Psi_n - \Psi_n'\\|\$.
-4. Estimate $\lambda_{\mathrm{CG}}\)$ via a linear fit of
+4. Estimate $\(\lambda_{\mathrm{CG}}\)$ via a linear fit of
    `log D_n` vs `n` on a chosen time window.
 5. Compare the estimated exponent to the model expectation
    $\log(1+\eta)\$.

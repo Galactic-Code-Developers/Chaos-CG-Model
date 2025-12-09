@@ -8,7 +8,7 @@ authors:
     given-names: Antonios
     affiliation: Kapodistrian Academy of Science
     # Replace with your actual ORCID if you want it public:
-    orcid: "https://orcid.org/0000-0000-0000-0000"
+    orcid: "https://orcid.org/0009-0008-5616-7746"
 abstract: >
   Minimal, self-contained Python code to explore the coherence-gradient chaos
   framework introduced in: Valamontes, A., "Chaos as a Coherence–Gradient
@@ -27,7 +27,7 @@ keywords:
   - Valamontes Interaction Diagrams
   - VID
 license: MIT
-repository-code: "https://github.com/USERNAME/chaos_cg_model"
+repository-code: "https://github.com/Galactic-Code-Developers/chaos_cg_model"
 preferred-citation:
   type: article
   title: "Chaos as a Coherence–Gradient Phenomenon: A DLSFH–SGCV–MC Analysis"

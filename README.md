@@ -113,7 +113,7 @@ Several natural directions for extending this package:
 - Replace the 3×3 matrix with larger propagators modeling full VID subgraphs.
 - Examine how “circulation parameters’’ in `vid_lattice_demo.py` influence  
   $\lambda_{\mathrm{CG}}$.
-- **Introduce explicit dependence of $\mathcal{T}_{\infty}$ on a discrete coherence-gradient field $G_{ab}(v)$.**
+- Introduce explicit dependence of $\mathcal{T}_${\infty}$ on a discrete coherence-gradient field $G_{ab}(v)$. (this line does not render properly in LaTex math)
 - Perform parameter scans over $(\eta,\alpha,\beta)$ to map regions where  
   $\rho(\mathcal{T}_{\infty}) > 1$.
 - Compare operator-norm growth with numerically extracted Lyapunov exponents.

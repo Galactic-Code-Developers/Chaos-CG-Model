@@ -67,7 +67,7 @@ python -m src.example_three_node
 
 This script will:
 
-1. Construct the 3×3 matrix $\(\mathcal{T}_{\infty}^{(3)}\$ of the form
+1. Construct the 3×3 matrix $\mathcal{T}_{\infty}^{(3)}\$ of the form
    described in the manuscript, with parameters `(eta, alpha, beta)`.
 2. Evolve two nearby initial coherence configurations for `N` steps.
 3. Compute the distance trajectory
@@ -75,7 +75,7 @@ This script will:
 4. Estimate $\lambda_{\mathrm{CG}}\)$ via a linear fit of
    `log D_n` vs `n` on a chosen time window.
 5. Compare the estimated exponent to the model expectation
-   $\(\log(1+\eta)\)$.
+   $\log(1+\eta)\$.
 
 The script prints the key quantities to the console and, if `matplotlib` is
 available, produces simple diagnostic plots.

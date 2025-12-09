@@ -13,10 +13,10 @@ results discussed in the paper, including:
 - The **spectral-radius / operator-norm instability criterion**.
 - The **three-node VID chain example**.
 - Numerical estimation of the **coherence-gradient Lyapunov exponent** $\lambda_{\mathrm{CG}}$.
-- Simple experiments linking **circulation-like parameters** to divergence rates.
+- Simple experiments linking **VID-like circulation parameters** to divergence rates.
 
-The code is intended to be lightweight and readable, and can be used as a
-starting point for more elaborate DLSFH/VID simulations.
+The code is intentionally lightweight and readable, intended as a starting point
+for more elaborate DLSFH/VID simulations.
 
 ---
 
@@ -29,12 +29,12 @@ dependencies from `requirements.txt`:
 pip install -r requirements.txt
 ```
 
-The core dependencies are:
+Core dependencies:
 
-- `numpy` — linear algebra and arrays  
-- `scipy` — optional, for spectral radius checks (fallbacks provided)  
-- `matplotlib` — for simple plots  
-- `networkx` — (optional) for DLSFH/VID graph scaffolding  
+- `numpy` — core linear algebra  
+- `scipy` — optional (spectral radius, stability checks)  
+- `matplotlib` — plotting  
+- `networkx` — optional lattice/graph tooling  
 
 ---
 
@@ -66,101 +66,84 @@ All scripts correspond directly to sections of the manuscript (see Appendix A).
 
 ## 3. Quickstart: Three-Node VID Chain
 
-To reproduce the **three-node VID chain** described in the paper, run:
+To reproduce the **three-node VID chain** analyzed in the paper:
 
 ```bash
 cd chaos_cg_model
 python -m src.example_three_node
 ```
 
-This script will:
+This script:
 
-1. Construct the 3×3 matrix $\mathcal{T}_{\infty}^{(3)}$ with parameters `(eta, alpha, beta)`.
-2. Evolve two nearby initial coherence configurations for `N` steps.
-3. Compute the divergence trajectory  
-   $D_n = \lVert \Psi_n - \Psi_n' \rVert$.
-4. Estimate $\lambda_{\mathrm{CG}}$ via a linear regression of `log(D_n)` vs `n`.
-5. Compare the measured value to the model prediction  
+1. Constructs the 3×3 propagator $\mathcal{T}_{\infty}^{(3)}$  
+   using parameters `(eta, alpha, beta)`.
+2. Evolves two nearby coherence configurations for `N` steps.
+3. Computes the distance trajectory  
+   $D_n = \| \Psi_n - \Psi'_n \|$.
+4. Fits $\lambda_{\mathrm{CG}}$ from a linear regression of `log(D_n)` vs `n`.
+5. Compares against the model expectation  
    $\log(1+\eta)$.
 
-If `matplotlib` is installed, the script also produces diagnostic plots.
+If `matplotlib` is installed, diagnostic plots are also generated.
 
 ---
 
 ## 4. Core Concept: Coherence-Gradient Chaos
 
-The numerical model implemented here encodes the following theoretical structure:
+The numerical model implements these ideas:
 
-- A discrete **coherence vector** $\Psi_t$ evolving over time.
-- An effective **linear propagator** $\mathcal{T}_{\infty}$ derived from  
-  a linearization of the coherence update rule around a reference configuration.
-- A **coherence-gradient Lyapunov exponent** $\lambda_{\mathrm{CG}}$ extracted  
-  from exponential separation of nearby initial states.
-- A connection between **VID loop circulation** and instability growth rates.
+- Evolution of a discrete coherence field represented by  
+  $\Psi_t \in \mathbb{R}^N$.
+- A linearized update rule  
+  $\Psi_{t+1} = \mathcal{T}_{\infty} \Psi_t$.
+- A coherence-gradient Lyapunov exponent $\lambda_{\mathrm{CG}}$ defined by  
+  exponential growth of distances between nearby states.
+- Instability driven by **anisotropies** in a coherence-gradient field.
+- Theoretical linkage to **VID loop circulation**.
 
-The code is **model-dependent** and **toy-level**, designed specifically to match
-the mathematical framework of the accompanying manuscript.
+The code does **not** attempt full DLSFH or SGCV physics — it reproduces only
+the mathematical instability structure used in the manuscript.
 
 ---
 
 ## 5. Extending the Experiments
 
-Several natural extensions include:
+Several natural directions for extending this package:
 
-- Replace the 3×3 matrix with higher-dimensional propagators corresponding to
-  more realistic VID subgraphs of the 20-node DLSFH lattice.
-- Explore how simple “circulation” parameters defined in  
-  `vid_lattice_demo.py` influence $\lambda_{\mathrm{CG}}$.
+- Replace the 3×3 matrix with larger propagators modeling full VID subgraphs.
+- Examine how “circulation parameters’’ in `vid_lattice_demo.py` influence  
+  $\lambda_{\mathrm{CG}}$.
 - **Introduce explicit dependence of $\mathcal{T}_{\infty}$ on a discrete coherence-gradient field $G_{ab}(v)$.**
-- Perform parameter-space scans over $(\eta,\alpha,\beta)$ to map regions where  
+- Perform parameter scans over $(\eta,\alpha,\beta)$ to map regions where  
   $\rho(\mathcal{T}_{\infty}) > 1$.
 - Compare operator-norm growth with numerically extracted Lyapunov exponents.
 
-All such experiments are suitable for inclusion in a Zenodo archive.
+These experiments mirror the interpretive structure of the manuscript.
 
 ---
 
 ## 6. Reproducibility Notes
 
-The design philosophy for this package:
+- All randomness uses fixed seeds.  
+- No external data files required.  
+- Every experiment runs in **< 1.5 seconds** on a modern laptop.  
+- Each numerical claim in the paper corresponds to a test or notebook:
 
-- All scripts use **fixed random seeds** where random choices occur.
-- No external datasets are required.
-- Experiments complete in **under 1.5 seconds** on a 2024 laptop.
-- Results correspond to each subsection of **Appendix A** in the manuscript:
-  - A.1 Divergence experiment  
-  - A.2 Three-node VID growth  
-  - A.3 Operator-norm criterion  
-  - A.4 Circulation instability  
-  - A.5 Coarse-grained Lyapunov comparison  
+| Manuscript Section | Numerical Validation |
+|-------------------|----------------------|
+| Definition 1 (Divergence) | `tests/test_divergence.py` |
+| Proposition 1 (Operator Norm) | `tests/test_operator_norm.py` |
+| VID Circulation Instability | `notebooks/vid_circulation_instability.ipynb` |
+| Three-Node Example | `src/example_three_node.py` |
+| Coarse-Grained Lyapunov Matching | `tests/test_lyapunov_coarse.py` |
 
-The manuscript cross-references these reproducibility points.
-
----
-
-## 7. TESTS.md Mapping
-
-See `TESTS.md` for a detailed mapping between numerical claims and code files.
-
-Example excerpts:
-
-- **Definition 1 (Divergence):**  
-  Verified by `tests/test_divergence.py`.
-
-- **Proposition 1 (Operator-Norm Criterion):**  
-  Verified by `tests/test_operator_norm.py`.
-
-- **VID Circulation Instability:**  
-  Demonstrated in `notebooks/vid_circulation_instability.ipynb`.
-
-- **Three-Node Exponential Growth:**  
-  Reproduced in `src/example_three_node.py`.
+See **`TESTS.md`** for details.
 
 ---
 
-## 8. Citation
+## 7. Citation
 
-If you use this package in a publication, please cite:
+If you use this package, please cite:
 
 > Valamontes, A., *Chaos as a Coherence–Gradient Phenomenon:  
 > A DLSFH–SGCV–MC Analysis* (manuscript).

@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this coherence-gradient chaos code, please cite it as below."
+title: "Coherence-Gradient Chaos Model — Reproducibility Package"
+version: "1.0.0"
+type: software
+authors:
+  - family-names: Valamontes
+    given-names: Antonios
+    affiliation: Kapodistrian Academy of Science
+    # Replace with your actual ORCID if you want it public:
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+abstract: >
+  Minimal, self-contained Python code to explore the coherence-gradient chaos
+  framework introduced in: Valamontes, A., "Chaos as a Coherence–Gradient
+  Phenomenon: A DLSFH–SGCV–MC Analysis" (manuscript). The package implements a
+  three-node VID chain, linearized ∞-tensor propagator, operator-norm and
+  spectral-radius criteria, and numerical estimation of the coherence-gradient
+  Lyapunov exponent λ_CG. It is explicitly model-dependent and designed as a
+  reproducibility companion to the manuscript.
+keywords:
+  - chaos
+  - Lyapunov exponent
+  - coherence-gradient
+  - Infinity Algebra
+  - DLSFH
+  - SGCV
+  - Valamontes Interaction Diagrams
+  - VID
+license: MIT
+repository-code: "https://github.com/USERNAME/chaos_cg_model"
+preferred-citation:
+  type: article
+  title: "Chaos as a Coherence–Gradient Phenomenon: A DLSFH–SGCV–MC Analysis"
+  authors:
+    - family-names: Valamontes
+      given-names: Antonios
+  journal: "To be submitted"
+  year: 2025
+  notes: >
+    This software repository provides the numerical experiments and toy models
+    used in the coherence-gradient chaos analysis.

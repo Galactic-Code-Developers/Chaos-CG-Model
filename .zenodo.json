@@ -1,0 +1,47 @@
+{
+  "title": "Coherence-Gradient Chaos Model — Reproducibility Package",
+  "upload_type": "software",
+  "publication_type": "software",
+  "description": "Minimal, self-contained Python code to explore the coherence-gradient chaos framework introduced in: Valamontes, A., \"Chaos as a Coherence–Gradient Phenomenon: A DLSFH–SGCV–MC Analysis\" (manuscript). The package implements a three-node VID chain, linearized ∞-tensor propagator, operator-norm and spectral-radius criteria, and numerical estimation of the coherence-gradient Lyapunov exponent λ_CG. It is explicitly model-dependent and designed as a reproducibility companion to the manuscript.",
+  "creators": [
+    {
+      "name": "Valamontes, Antonios",
+      "affiliation": "Kapodistrian Academy of Science",
+      "orcid": "0009-0008-5616-7746"
+    }
+  ],
+  "license": "MIT",
+  "language": "eng",
+  "keywords": [
+    "chaos",
+    "Lyapunov exponent",
+    "coherence-gradient",
+    "Infinity Algebra",
+    "DLSFH",
+    "SGCV",
+    "Valamontes Interaction Diagrams",
+    "VID"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article",
+      "identifier": "Chaos as a Coherence–Gradient Phenomenon: A DLSFH–SGCV–MC Analysis (manuscript)"
+    }
+  ],
+  "contributors": [],
+  "version": "v1.0.0",
+  "access_right": "open",
+  "notes": "This archive accompanies the coherence-gradient chaos framework and is designed for numerical experiments on toy VID subgraphs and operator-norm-based instability criteria.",
+  "communities": [],
+  "subjects": [
+    {
+      "term": "Mathematical Physics",
+      "identifier": "mathematical-physics"
+    },
+    {
+      "term": "Nonlinear Dynamics",
+      "identifier": "nonlinear-dynamics"
+    }
+  ]
+}

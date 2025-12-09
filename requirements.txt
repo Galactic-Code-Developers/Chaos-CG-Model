@@ -1,0 +1,1 @@
+matplotlib>=3.7\nmatplotlib>=3.8.0\nnbformat>=5.10.0\nnetworkx>=3.1\nnumpy>=1.24\nnumpy>=1.25.0\nscipy>=1.10

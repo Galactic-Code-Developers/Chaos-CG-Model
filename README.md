@@ -1,5 +1,10 @@
 # Coherence-Gradient Chaos Model — Reproducibility Package
 
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)]()
+[![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.17871990.svg)](https://doi.org/10.5281/zenodo.17871990)
+
 This repository contains minimal, self-contained code to explore the
 **coherence-gradient chaos** framework introduced in:
 

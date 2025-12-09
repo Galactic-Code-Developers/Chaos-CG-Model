@@ -106,9 +106,6 @@ Some ideas for extending this package:
 - Replace the 3×3 propagator with larger matrices reflecting more detailed
   VID subgraphs of the 20-node DLSFH lattice.
   
-- Introduce explicit dependence of $\(\mathcal{T}_{\infty}\)$$ on a discrete
-  coherence-gradient field $\(G_{ab}(v)\)$.
-  
 - Explore the relationship between simple “circulation” parameters in
   `vid_lattice_demo.py` and numerically estimated $\(\lambda_{\mathrm{CG}}\)$.
   

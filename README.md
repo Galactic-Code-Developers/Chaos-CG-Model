@@ -9,7 +9,7 @@ This repository contains minimal, self-contained code to explore the
 The goal is to provide a concrete numerical playground for the **model-dependent**
 results discussed in the paper, including:
 
-- The **linearized ∞–tensor propagator** \(\mathcal{T}_{\infty}\).
+- The **linearized ∞–tensor propagator** $\(\mathcal{T}_{\infty}\$.
 - The **spectral-radius / operator-norm instability criterion**.
 - The **three-node VID chain example**.
 - Numerical estimation of the **coherence-gradient Lyapunov exponent** \(\lambda_{\mathrm{CG}}\).
@@ -67,11 +67,11 @@ python -m src.example_three_node
 
 This script will:
 
-1. Construct the 3×3 matrix \(\mathcal{T}_{\infty}^{(3)}\) of the form
+1. Construct the 3×3 matrix $\(\mathcal{T}_{\infty}^{(3)}\$ of the form
    described in the manuscript, with parameters `(eta, alpha, beta)`.
 2. Evolve two nearby initial coherence configurations for `N` steps.
 3. Compute the distance trajectory
-   $\(D_n = \\|\Psi_n - \Psi_n'\\|\)$.
+   $\(D_n = \\|\Psi_n - \Psi_n'\\|\$.
 4. Estimate $\lambda_{\mathrm{CG}}\)$ via a linear fit of
    `log D_n` vs `n` on a chosen time window.
 5. Compare the estimated exponent to the model expectation
@@ -89,7 +89,7 @@ The numerical model implemented here encodes the following ideas:
 - Dynamics on a finite-dimensional coherence vector $\(\Psi_t\)$.
 - An effective linear propagator $\(\mathcal{T}_{\infty}\)$ arising from
   linearization of the discrete update rule around a reference configuration.
-- A **coherence-gradient Lyapunov exponent** \(\lambda_{\mathrm{CG}}\)
+- A **coherence-gradient Lyapunov exponent** $\(\lambda_{\mathrm{CG}}\)$
   extracted from exponential growth of distances between nearby initial
   coherence states.
 

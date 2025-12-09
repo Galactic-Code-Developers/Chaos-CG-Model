@@ -8,8 +8,8 @@ The code is intentionally minimal and model-dependent. It is not a full
 DLSFH/SGCV simulator; instead it provides small, controlled toy systems that
 instantiate the *structure* of coherence-gradient chaos:
 
-- linear propagation by a matrix :math:`\mathcal{T}_\infty`,
-- exponential growth of the distance :math:`D_n = \|\Psi_n - \Psi_n'\|`,
+- linear propagation by a matrix :math:$\mathcal{T}_\infty$,
+- exponential growth of the distance :math:$D_n = \|\Psi_n - \Psi_n'\|$,
 - operator-norm and spectral diagnostics.
 
 
@@ -21,7 +21,7 @@ operator-norm growth of the form
 
 .. math::
 
-    \|\mathcal{T}_\infty^n\|_{\mathrm{op}} > C e^{\lambda n}
+    $\|\mathcal{T}_\infty^n\|_{\mathrm{op}} > C e^{\lambda n}$
 
 for some :math:`\lambda > 0`.
 
@@ -40,7 +40,7 @@ for some :math:`\lambda > 0`.
        print(n, model.power_norm(n))
    ```
 
-3. You should see monotone growth in :math:`\|T_\infty^n\|_{\mathrm{op}}`
+3. You should see monotone growth in :math:$\|T_\infty^n\|_{\mathrm{op}}$
    with :math:`n`. On a typical machine the growth is close to exponential,
    consistent with an effective :math:`\lambda_{\mathrm{CG}} > 0` for this
    toy model.
@@ -68,17 +68,17 @@ python -m src.example_three_node
 
 This will:
 
-- construct a 3x3 propagator `T_infty^(3)` with mild amplification and
+- construct a 3x3 propagator $T_infty^(3)$ with mild amplification and
   off-diagonal coupling,
 - initialize two nearby states `psi0` and `psi0_prime`,
 - evolve them for 200 steps,
-- estimate :math:`\lambda_{\mathrm{CG}}` via a linear fit to
+- estimate :math:$\lambda_{\mathrm{CG}}$ via a linear fit to
   :math:`\log D_n` on a chosen window,
-- print the estimated :math:`\lambda_{\mathrm{CG}}` and spectral
+- print the estimated :math: $\lambda_{\mathrm{CG}}$ and spectral
   diagnostics,
-- produce a matplotlib figure of :math:`\log D_n` and the fitted line.
+- produce a matplotlib figure of :math:$\log D_n$ and the fitted line.
 
-The numerical value of :math:`\lambda_{\mathrm{CG}}` depends on the exact
+The numerical value of :math: $\lambda_{\mathrm{CG}}4 depends on the exact
 matrix entries, but on a typical CPU it is **positive**, illustrating
 coherence-gradient divergence in this minimal model.
 
@@ -88,7 +88,7 @@ coherence-gradient divergence in this minimal model.
 **Claim in paper (qualitative)**  
 Closed VID loops with sufficient coherence circulation support
 coherence-gradient chaos, reflected in a positive
-:math:`\lambda_{\mathrm{CG}}` and operator-norm growth.
+:math: $\lambda_{\mathrm{CG}}$ and operator-norm growth.
 
 **Script**
 
@@ -107,9 +107,9 @@ This will:
 - build a directed pentagon graph with unit coherence increments,
 - use `build_pentagon_circulation_propagator(eta=0.08, damping=0.02)` to
   construct a 5x5 toy propagator,
-- evolve two nearby states and estimate :math:`\lambda_{\mathrm{CG}}`,
+- evolve two nearby states and estimate :math: $\lambda_{\mathrm{CG}}$,
 - print the number of nodes/edges, spectral radius, operator norm,
-  and estimated :math:`\lambda_{\mathrm{CG}}`.
+  and estimated :math: $\lambda_{\mathrm{CG}}$.
 
 On a typical machine, the estimated :math:`\lambda_{\mathrm{CG}}` is again
 **positive**, providing a concrete realization of coherence-gradient
